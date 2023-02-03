@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="projects.css">
+    <script src="projects.js" defer></script>
+</head>
+<body class="light">
+  <div id="nav">
+    <button id="logout">logout</button>
+    <input type="text" class="form-control" id="filter" placeholder="Search Projects..." style="margin-left: 300px;">
+  </div>
+  <section class="row">
+    <div id="left" class="light">
+      <div class="center light">
+        <div id="error" style="color: red; padding: 10px; margin-bottom: -30px"></div>
+        <h1>Add Project</h1>
+        <form method="post" id="project-form">
+          <div class="txt_field">
+            <input type="text" id="projectname" name="projectname" placeholder="Project Name" required />
+          </div>
+          <div class="txt_field">
+            <input type="text" id="description" name="description" placeholder="Project Description" required />
+          </div>
+          <div class="txt_field">
+            <label>Status</label>
+            <select id="status" name="status" >
+              <option value="progress">Progress</option>
+              <option value="pending">Pending</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <input type="submit" value="Add Project" />
+        </form>
+      </div>
+      <div style="text-align: center ; margin-top: 35px;"><h1>Projects</h1></div>
+        <div style="text-align: center ; margin-top: 35px;">
+          <form id="perpage">
+            Projects Per Page : <input style="color: black;" type="number" min="2" max="20"  name="projectsPerPage" >
+            <button type="submit">submit</button>
+          </form>
+        </div>
+        <div id="project-div" class="light"></div>
+        <div id="pagination"></div> 
+      </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+</body>
+</html>
